@@ -21,7 +21,10 @@ public class Main {
 
         Employee employee = new Employee(name, grossSalary);
 
-        SalaryService salaryService = new SalaryService();
+        TaxService taxService = new TaxService();
+        PensionService pensionService = new PensionService();
+
+        SalaryService salaryService = new SalaryService(taxService, pensionService);
 
         double netSalary = salaryService.netSalary(employee);
 
